@@ -1,0 +1,27 @@
+<form action="handler.php" method="POST">
+  <label>Ваше Имя <input type="text" name="name"/></label> <br> <br>
+  <label>Телефон <input type="text" name="phone"/></label> <br> <br>
+  <label>Почта <input type="text" name="email"/></label> <br> <br>
+  <label>Ваш комментарий</label> <br>
+  <textarea name="comment"></textarea> <br> <br>
+  <input type="hidden" name="status" value="20715778" />
+  <input type="hidden" name="intr_group" value="bbb@bb.ru;newcontainer@gmail.com;dmitry.ponov@mail.ru" />
+  <input type="submit" />
+</form>
+<script type="text/javascript">
+  (function(d, w, k) {
+      w.introvert_callback = function() {
+          try {
+              w.II = new IntrovertIntegration(k);
+          } catch (e) {console.log(e)}
+      };
+  
+      var n = d.getElementsByTagName("script")[0],
+          e = d.createElement("script");
+  
+      e.type = "text/javascript";
+      e.async = true;
+      e.src = "https://api.yadrocrm.ru/js/cache/"+ k +".js";
+      n.parentNode.insertBefore(e, n);
+  })(document, window, '336...0c5');
+</script>
