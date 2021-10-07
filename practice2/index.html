@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="styles/glDatePicker.default.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="glDatePicker.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="mydate" />
+    <script>
+      const N = 2;
+      $(document).ready(function() {
+        $.get('/info.php').done((result) => {
+          if (result.error) {
+            alert(result.error);
+            return;
+          }
+          let d = new Date();
+          const p30d = new Date(); // Now
+          p30d.setDate(p30d.getDate() + 30); // Month later
+
+          const selectableDates = [];
+          for (; d <= p30d; d.setDate(d.getDate() + 1)) {
+            
+            const timeStr = d.toISOString().split('T')[0] + ' 00:00:00';
+            
+            if (!result[timeStr] || result[timeStr] < N) {
+              selectableDates.push({date: new Date(d)});
+            }
+          }
+          $('input').glDatePicker({ selectableDates });
+        }).fail((error) => {
+          console.log(error);
+        });
+      });
+    </script>
+  </body>
+</html>
