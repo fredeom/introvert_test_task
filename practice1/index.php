@@ -59,7 +59,7 @@ if (!isset($_GET['date_from']) || !isset($_GET['date_to'])) {
 $date_from = $_GET['date_from'];
 $date_to = $_GET['date_to'];
 
-Introvert\Configuration::getDefaultConfiguration()->setHost('https://api.s1.yadrocrm.ru/tmp');
+Introvert\Configuration::getDefaultConfiguration()->setHost('https://a...rm.ru/tmp');
 //Introvert\Configuration::getDefaultConfiguration()->setApiKey('key', '23bc075b710da43....889aed');
 
 $api = new Introvert\ApiClient();
